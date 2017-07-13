@@ -1,0 +1,43 @@
+*{
+    box-sizing: border-box;
+}
+
+.container{
+    display: block;
+    /*background: #f4f4f4;*/
+    /*width: 100%;*/
+    max-width:540px;
+    max-height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 400px;
+    padding: 10px 40px;
+    text-align: center;
+    position:center;
+    font-family:  Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    
+
+}
+
+.userInfo{
+    width: 70%;
+    display: inline-block;
+    padding:10px;
+    font-weight: 100;
+    font-size: 15px;
+    margin: 5px 0;
+    border-radius: 15px;
+    color: #3f3f3f;
+}
+
+.login_input{
+    width: 25%;
+    display: inline-block;
+    padding:10px;
+    
+    font-size: 15px;
+    margin: 5px 0;
+    border-radius: 20px;
+    color: #3f3f3f;
+}

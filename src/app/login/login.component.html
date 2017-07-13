@@ -1,0 +1,19 @@
+<form name="form" 
+      (ngSubmit)="login(form.value)" 
+      #form="ngForm" 
+      class="container"
+      ngNativeValidate
+      >
+    <input id="user" type="text" class="userInfo" name="username" placeholder="Username" ngModel required />
+    <br><br>
+    <input id="pass" type="password" class="userInfo" data-type="password" placeholder="Password" name="password" ngModel required/>
+    
+    <br><br>
+    <input type="submit" class="login_input" value="LOGIN">
+</form>
+
+
+
+
+
+
