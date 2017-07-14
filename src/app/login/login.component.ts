@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core' ;
 import { Component, OnInit } from '@angular/core';
 import { Http,Response } from '@angular/http' ;
 import { Observable } from 'rxjs/Observable';
+import { Router,ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,9 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class LoginComponent implements OnInit {
 
-  constructor(private http: Http) { }
+  constructor(private http: Http,
+    private route: ActivatedRoute,
+    private router: Router,) { }
 
   ngOnInit() {
   }
@@ -28,7 +31,10 @@ export class LoginComponent implements OnInit {
       if( count > 0 ){
         user_api= (data.json().results[0].name);
         user_birth = (data).json().results[0].birth_year;
-        if( password == user_birth && username == user_api ) alert("YOU CAN LOG IN ");
+        if( password == user_birth && username == user_api ) {
+         console.log("Successful");
+         this.router.navigate(['/search']);
+        }  
         else if( password != user_birth || username != user_api) alert("CHECK Your Username and Passowrd");
       }
     })

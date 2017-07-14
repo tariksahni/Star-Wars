@@ -1,0 +1,19 @@
+<form class="form-inline"
+  [formGroup]="form">
+  <input type="search"
+          class="form-control"
+          placeholder="Enter search string"
+          formControlName="searchField">
+
+</form>
+
+<div class="text-center">
+  <p class="lead" *ngIf="loading">Loading...</p>
+</div>
+
+<ul class="list-group">
+  <li class="list-group-item"
+  >
+   
+  </li>
+</ul>
