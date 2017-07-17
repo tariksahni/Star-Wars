@@ -1,19 +1,25 @@
-<form class="form-inline"
-  [formGroup]="form">
-  <input type="search"
-          class="form-control"
-          placeholder="Enter search string"
-          formControlName="searchField">
+<!--<p  *ngIf = "isSuccess; then success else failure"></p>
+<ng-template #failure>
+</ng-template>
 
-</form>
+<ng-template #success>-->
+  <div class= "container">
+  <form class="form-inline"
+    >
+    <input  type="search"
+            class="form-control"
+            placeholder="         Enter search string      "
+            [formControl]="searchField">
+            
+  </form>
 
-<div class="text-center">
-  <p class="lead" *ngIf="loading">Loading...</p>
-</div>
+  <br><br>
+    <p class="lead" *ngIf="loading">Loading...</p>
+  
 
-<ul class="list-group">
-  <li class="list-group-item"
-  >
-   
-  </li>
+  <ul class="list-group">
+    <li class="list-group-item"  *ngFor="let items of results | async">
+    {{items}}
+    </li>
 </ul>
+  </div>

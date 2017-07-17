@@ -18,6 +18,7 @@ export class LoginComponent implements OnInit {
     private router: Router,) { }
 
   ngOnInit() {
+    var isSuccesss = false ;
   }
 
   login = (user) =>{
@@ -33,6 +34,7 @@ export class LoginComponent implements OnInit {
         user_birth = (data).json().results[0].birth_year;
         if( password == user_birth && username == user_api ) {
          console.log("Successful");
+         
          this.router.navigate(['/search']);
         }  
         else if( password != user_birth || username != user_api) alert("CHECK Your Username and Passowrd");

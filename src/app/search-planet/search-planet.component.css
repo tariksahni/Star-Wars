@@ -1,0 +1,35 @@
+*:focus {
+    outline: none;
+}
+
+.container{
+    padding:110px;
+    margin: 210px 0;
+    margin-left: 250px;
+}
+input,form{
+
+    width: 72%;
+    height: 1666;
+    display: inline-block;
+    font-weight: 100;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 20px;
+    color: #3f3f3f;
+}
+.lead{
+    color: #3f3f3f;
+    font-size: 25px;
+   
+    text-align: left;
+}
+li{
+
+    width: 70%;
+    display: inline-block;
+    font-weight: 100;
+    font-size: 20px;
+    text-align: center;
+    color: #3f3f3f;
+}

@@ -21,6 +21,7 @@ export class SearchService {
 
   search(term: string): Observable<Array<Object>> {
     let apiURL = `${this.apiRoot}?search=${term}`;
+    console.log(apiURL);
     return this.http.get(apiURL)
       .map(res => {
         return res.json().results.map(items => {
