@@ -1,0 +1,29 @@
+TASKS TO BE DONE :
+
+1. LOGIN PAGE :
+
+Allow the user to login as a character from STAR WARS using the character name as the
+username and birth year as the password.
+
+
+2. SEARCH PAGE :
+
+Implement a type-along search which searches for planets and lists them in components
+(eg: div) that are sized relative to their population on every keypress in the input field.
+(eg: you can use a bigger font size for a planet with larger population, or even show a
+bigger div for a planet with larger population)
+
+
+
+
+
+TASKS DONE :
+
+1. Functionality and Styling of Login page is done .
+2. Functionality of search tab is done .
+
+
+TASKS TO BE DONE :
+
+1. Styling of each search item according to population . 
+
