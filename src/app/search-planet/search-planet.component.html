@@ -1,8 +1,8 @@
-<!--<p  *ngIf = "isSuccess; then success else failure"></p>
+<p  *ngIf = "isSuccess; then success else failure"></p>
 <ng-template #failure>
-</ng-template>
-
-<ng-template #success>-->
+  <p>LOGIN KRO</p>
+</ng-template>-->
+<ng-template #success>
   <div class= "container">
   <form class="form-inline"
     >
@@ -19,7 +19,8 @@
 
   <ul class="list-group">
     <li class="list-group-item"  *ngFor="let items of results | async">
-    {{items}}
+    {{items | orderBy: 'population'}}
     </li>
 </ul>
   </div>
+</ng-template>

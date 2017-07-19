@@ -7,6 +7,7 @@ import {ReactiveFormsModule, FormControl, FormsModule, FormGroup } from '@angula
 
 import { LoginComponent } from '../login/login.component';
 import {SearchService} from '../search.service';
+import {SharedService} from '../shared.service';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
@@ -25,11 +26,20 @@ export class SearchPlanetComponent implements OnInit {
   private loading: boolean = false;
   private results: Observable<Array<String>>;
   public searchField : FormControl
+  private isSuccess : Boolean
+  constructor(private myservice: SearchService,private myshared: SharedService, private http: Http) {
 
-  constructor(private myservice: SearchService, private http: Http) {
   }
+  
+  ngOnInit() { 
 
-  ngOnInit() {
+     this.myshared.getSaveBtnStatus().subscribe(
+        data => {
+          console.log(data);
+          this.isSuccess = data
+        }
+      );
+      console.log(this.isSuccess);
     this.searchField = new FormControl();
     console.log(this.searchField);
     this.results = this.searchField.valueChanges

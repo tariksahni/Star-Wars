@@ -1,10 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule} from '@angular/router';
-
+import {NgPipesModule} from 'ngx-pipes';
 import { HttpModule }    from '@angular/http';
 import {ReactiveFormsModule, FormControl, FormsModule, FormGroup} from '@angular/forms';
 import {SearchService} from './search.service';
+import {SharedService} from './shared.service';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { SearchPlanetComponent } from './search-planet/search-planet.component';
@@ -24,6 +25,7 @@ import { TestComponent } from './test/test.component';
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
+    NgPipesModule,
     RouterModule.forRoot([
       {
         path:'',
@@ -36,7 +38,7 @@ import { TestComponent } from './test/test.component';
       }
     ])
   ],
-  providers: [SearchService],
+  providers: [SearchService, SharedService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
