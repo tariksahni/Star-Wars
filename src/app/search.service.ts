@@ -24,7 +24,7 @@ export class SearchService {
     return this.http.get(apiURL)
       .map(res => {
     return res.json().results.map(items => {
-    
+    if (items.population == 'unknown')items.population = 100 ;
     return { name: items.name, population: items.population , variable:Math.log(items.population)+10 };
     });
     });

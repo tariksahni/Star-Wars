@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule} from '@angular/router';
 import {NgPipesModule} from 'ngx-pipes';
+// import { OrderByPipe } from './app.orderBy';
 import { HttpModule }    from '@angular/http';
 import {ReactiveFormsModule, FormControl, FormsModule, FormGroup} from '@angular/forms';
 import {SearchService} from './search.service';
