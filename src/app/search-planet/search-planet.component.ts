@@ -4,7 +4,7 @@ import { Http,Response } from '@angular/http' ;
 import { Observable } from 'rxjs/Observable';
 import { Router,ActivatedRoute } from '@angular/router';
 import {ReactiveFormsModule, FormControl, FormsModule, FormGroup } from '@angular/forms';
-
+import {NgPipesModule} from 'ngx-pipes';
 import { LoginComponent } from '../login/login.component';
 import {SearchService} from '../search.service';
 import {SharedService} from '../shared.service';
@@ -24,7 +24,7 @@ import 'rxjs/add/operator/do';
 export class SearchPlanetComponent implements OnInit {
   form;
   private loading: boolean = false;
-  private results: Observable<Array<String>>;
+  private results : Array<Object>;
   public searchField : FormControl
   private isSuccess : Boolean
   constructor(private myservice: SearchService,private myshared: SharedService, private http: Http) {
@@ -33,26 +33,18 @@ export class SearchPlanetComponent implements OnInit {
   
   ngOnInit() { 
 
-     this.myshared.getSaveBtnStatus().subscribe(
-        data => {
-          console.log(data);
-          this.isSuccess = data
-        }
-      );
-      console.log(this.isSuccess);
-    this.searchField = new FormControl();
-    console.log(this.searchField);
-    this.results = this.searchField.valueChanges
+  this.myshared.getSaveBtnStatus().subscribe(data => this.isSuccess = data);
+  this.searchField = new FormControl();
+  this.searchField.valueChanges
         .debounceTime(400)
         .distinctUntilChanged()
-        .do(_ => this.loading = false)
         .switchMap(term => this.myservice.search(term))
-        .do(_ => this.loading = false)
-  }
-
-  doSearch(term: string) {
-    this.myservice.search(term)
-    
+        .subscribe(value => {
+          this.results = value;
+          console.log(this.results);
+        }
+        );
+        
   }
 }
 

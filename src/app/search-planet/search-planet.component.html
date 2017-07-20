@@ -18,8 +18,8 @@
   
 
   <ul class="list-group">
-    <li class="list-group-item"  *ngFor="let items of results | async">
-    {{items | orderBy: 'population'}}
+    <li class="list-group-item" *ngFor="let items of results" [ngStyle]="{'font-size.px':items.variable}"   >
+        {{items.name}},{{items.population}}
     </li>
 </ul>
   </div>

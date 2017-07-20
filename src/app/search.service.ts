@@ -21,15 +21,12 @@ export class SearchService {
 
   search(term: string): Observable<Array<Object>> {
     let apiURL = `${this.apiRoot}?search=${term}`;
-    console.log(apiURL);
     return this.http.get(apiURL)
       .map(res => {
-        return res.json().results.map(items => {
-          return new Array(
-            items.name,
-            items.population
-          );
-      });
+    return res.json().results.map(items => {
+    
+    return { name: items.name, population: items.population , variable:Math.log(items.population)+10 };
+    });
     });
   }
 }
