@@ -1,25 +1,37 @@
 *:focus {
     outline: none;
 }
+.login12{
+    color:#3f3f3f;
+    font-size: 28px;
+    margin-left: 215px;
+}  
+
+.login{
+    color:white;
+    margin-left: 230px;
+    padding: 300px;
+    font-size : 30px;
+}
 
 .container{
-    padding:110px;
-    margin: 210px 0;
-    margin-left: 250px;
+    padding:90px;
+    margin: 190px 0;
+    margin-left: 270px;
     /*background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/694px-Star_Wars_Logo.svg.png'); 
     background-repeat:no-repeat;
     background-size:cover;*/
 }
 input,form{
 
-    width: 72%;
+    width: 70%;
     height: 1666;
     display: inline-block;
     font-weight: 100;
     font-size: 20px;
     text-align: center;
     border-radius: 20px;
-    color: #3f3f3f;
+    color:black;
 }
 .lead{
     color: #3f3f3f;
@@ -29,7 +41,7 @@ input,form{
 }
 li{
 
-    width: 70%;
+    width: 25%;
     display: inline-block;
     text-align: center;
     color: #3f3f3f;

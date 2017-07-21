@@ -28,13 +28,15 @@ export class SearchPlanetComponent implements OnInit {
   private results : Array<Object>;
   public searchField : FormControl
   private isSuccess : Boolean
+  private loggedIn : string
   constructor(private myservice: SearchService,private myshared: SharedService, private http: Http) {
 
   }
   
   ngOnInit() { 
-
+  
   this.myshared.getSaveBtnStatus().subscribe(data => this.isSuccess = data);
+  this.myshared.getUserName().subscribe(data => this.loggedIn = data);
   this.searchField = new FormControl();
   this.searchField.valueChanges
         .debounceTime(400)

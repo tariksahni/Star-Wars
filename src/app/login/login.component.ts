@@ -37,6 +37,7 @@ export class LoginComponent implements OnInit {
           
           console.log("Successful");
           this.myshared.setSaveBtnStatus(true);
+          this.myshared.setUserName(user_api);
           this.router.navigate(['/search']);
         }  
         else if( password != user_birth || username != user_api) alert("CHECK Your Username and Passowrd");

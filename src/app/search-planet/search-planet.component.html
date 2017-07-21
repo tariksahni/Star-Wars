@@ -1,9 +1,11 @@
-<p  *ngIf = "isSuccess; then success else failure"></p>
+ <p  *ngIf = "isSuccess; then success else failure"></p>
 <ng-template #failure>
-  <p>LOGIN KRO</p>
+  <p class = "login">You must login first !!!</p>
 </ng-template>-->
 <ng-template #success>
+
   <div class= "container">
+ <p class="login12">Hi , {{loggedIn}}</p>
   <form class="form-inline"
     >
     <input  type="search"
@@ -19,7 +21,7 @@
 
   <ul class="list-group">
     <li class="list-group-item" *ngFor="let items of results | orderBy:'variable' " [ngStyle]="{'font-size.px':items.variable}"   >
-        {{items.name}} , {{items.population}}
+        {{items.name}}
     </li>
 </ul>
   </div>
