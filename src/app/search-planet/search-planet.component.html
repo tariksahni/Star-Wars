@@ -1,6 +1,6 @@
- <p  *ngIf = "isSuccess; then success else failure"></p>
+ <p  *ngIf = "isSuccess &&  timeOut ; then success else failure"></p>
 <ng-template #failure>
-  <p class = "login">You must login first !!!</p>
+  <p class = "login">You must login again or your Search Limit exceeded!!!</p>
 </ng-template>-->
 <ng-template #success>
 
