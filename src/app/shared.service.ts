@@ -1,25 +1,26 @@
-import {Injectable} from "@angular/core";
+import {Injectable} from '@angular/core';
 import { BehaviorSubject} from 'rxjs/BehaviorSubject';
-import {Observable} from "rxjs/Observable";
+import {Observable} from 'rxjs/Observable';
 
 @Injectable()
-export class SharedService{
+export class SharedService {
     private isSuccess = new BehaviorSubject<boolean>(false);
     private loggedIn = new BehaviorSubject<string>('');
 
-    getSaveBtnStatus(){
+    getLoggedInStatus() {
         return this.isSuccess.asObservable();
     }
 
-    setSaveBtnStatus(value: boolean){
+    setLoggedInStatus(value: boolean) {
         this.isSuccess.next(value);
     }
 
-    setUserName(value : string){
+    setUserName(value: string) {
         this.loggedIn.next(value);
     }
 
-    getUserName(){
+    getUserName() {
         return this.loggedIn.asObservable();
     }
+// tslint:disable-next-line:eofline
 }
